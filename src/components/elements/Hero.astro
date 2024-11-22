@@ -1,0 +1,18 @@
+---
+export interface Props {
+  title: string ;
+    url: string;
+    subtitle?: string;
+}
+
+const { title, url, subtitle } = Astro.props;
+---
+
+<section class="hero | region | flow " style=`background-image: url(${url});
+background-repeat: no-repeat;
+background-attachment: scroll;
+background-size: cover;
+background-color: unset;`>
+    <h1>{title}</h1>
+    {subtitle && <h2>{subtitle}</h2>}
+</section>

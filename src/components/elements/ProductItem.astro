@@ -1,0 +1,19 @@
+---
+export interface Props {
+    image: string;
+    description: string;
+    title: string;
+    cost: string;
+    url: string;
+}
+const { image, description, cost, title } = Astro.props;
+---
+<li class="card">
+    <img src=`${image}` alt="" />
+    <div class="flow">
+      <h3><a data-variant="naked" href=`${image}`>{title}</a></h3>
+      <p>{description}</p>
+      <p>Cost: &pound; {cost}</p>
+      <a href=`url` class="button w-full">Buy Now</a>
+    </div> 
+  </li>
