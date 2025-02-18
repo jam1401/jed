@@ -5,7 +5,7 @@ import react from "@astrojs/react";
 import { loadEnv } from "vite";
 import netlify from "@astrojs/netlify";
 
-const { PUBLIC_SANITY_STUDIO_PROJECT_ID, PUBLIC_SANITY_STUDIO_DATASET } =
+const { PUBLIC_SANITY_PROJECT_ID, PUBLIC_SANITY_DATASET } =
   // @ts-ignore
   loadEnv(process.env.NODE_ENV, process.cwd(), "");
 
@@ -13,8 +13,8 @@ const { PUBLIC_SANITY_STUDIO_PROJECT_ID, PUBLIC_SANITY_STUDIO_DATASET } =
 export default defineConfig({
   integrations: [
     sanityIntegration({
-      projectId: PUBLIC_SANITY_STUDIO_PROJECT_ID,
-      dataset: PUBLIC_SANITY_STUDIO_DATASET,
+      projectId: PUBLIC_SANITY_PROJECT_ID,
+      dataset: PUBLIC_SANITY_DATASET,
       useCdn: true,
       studioBasePath: "/admin",
     }),
